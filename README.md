@@ -1,2 +1,2 @@
-# -Project4-frontend.github.io
+# Project4-frontend.github.io
 Travel Blog/Journal
