@@ -9,7 +9,7 @@ const Post = (props) => {
             <p>{props.post.city}</p>
             <p>{props.post.attractions}</p>
             <p>{props.post.recommendations}</p>
-            <p>{props.post.photo_url}</p>
+            <img src={props.post.photo_url} alt="pic" width="400" height="300"/>
             <button>Update Post</button>
         </div>
     )

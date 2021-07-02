@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import {Route, Link, withRouter } from 'react-router-dom';
 import axios from 'axios';
 import Profile from './Components/Profile/Profile';
-import Post from './Components/Post/Post';
+import Posts from './Components/Posts/Posts';
 
 
 class App extends Component {
@@ -11,7 +11,7 @@ class App extends Component {
     super(props);
     this.state = {
       user: null,
-      post: [],
+      posts: [],
       csrfToken: null
     }
   }  
@@ -20,13 +20,15 @@ class App extends Component {
     const users = await axios('http://localhost:8000');
     const getUser = { id: users.data[0].pk, ...users.data[0].fields };
     const posts = await axios(`http://localhost:8000/profile/posts/${getUser.id}/`);
+    console.log(posts);
     const getPosts = posts.data.map(post => {
       const getPost = { id: post.pk, ...post.fields }
       return getPost
     })
+    console.log(getPosts)
     this.setState({
       user: getUser,
-      post: getPosts
+      posts: getPosts
     })
   }
 
@@ -47,12 +49,12 @@ class App extends Component {
         <Route path="/profile" render={() =>
             <Profile 
               user={this.state.user} 
-              post={this.state.post}
+              posts={this.state.posts}
             />
         }/>
         <Route exact path="/posts" render={() => 
-            <Post 
-              post={this.state.post} 
+            <Posts 
+              posts={this.state.posts} 
             />
         }/>   
         
