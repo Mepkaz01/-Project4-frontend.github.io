@@ -2,8 +2,9 @@ import './App.css';
 import React, { Component } from 'react';
 import {Route, Link, withRouter } from 'react-router-dom';
 import axios from 'axios';
-import Profile from './Components/Profile/Profile';
-import Posts from './Components/Posts/Posts';
+import Home from "./Components/Home"
+import Posts from './Components/Posts';
+import Profile from './Components/Profile';
 
 
 class App extends Component {
@@ -36,27 +37,22 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header>
-            <h1>THIS IS TRAVEL JOURNAL</h1>
-            <nav>
-              <ul>
-                <li><Link to="/">Home</Link></li>
-                <li><Link to="/profile">Profile</Link></li>
-                <li><Link to="/posts">Travel Posts</Link></li>
-              </ul>
-            </nav>
-        </header>
+
+        <Route path="/" exact render={() => 
+            <Home />} 
+        />       
+             
         <Route path="/profile" render={() =>
             <Profile 
               user={this.state.user} 
-              posts={this.state.posts}
+              // posts={this.state.posts}
             />
         }/>
         <Route exact path="/posts" render={() => 
             <Posts 
               posts={this.state.posts} 
             />
-        }/>   
+        }/>           
         
       </div>
     );
