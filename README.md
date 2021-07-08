@@ -14,6 +14,6 @@ Travel Blog/Journal
 5) User Login/Signup page should direct to User's Profile page with Edit/Delete functions
 6) User's Profile page is able to show useful/favorite posts
 7) User's Profile page should have functionality to be able to remove useful/favorite posts from the page
-8) Admin Logn/Signup page should direct to Admin's Profile page with Edit/Delete functions
+8) Admin Login/Signup page should direct to Admin's Profile page with Edit/Delete functions
 9) Admin Profile page should have links to User and Admin reports with delete functionality
 10) Admin Profile page should have links to Create Post page and Post Edit/Delete Page
