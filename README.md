@@ -17,3 +17,8 @@ Travel Blog/Journal
 8) Admin Login/Signup page should direct to Admin's Profile page with Edit/Delete functions
 9) Admin Profile page should have links to User and Admin reports with delete functionality
 10) Admin Profile page should have links to Create Post page and Post Edit/Delete Page
+
+## Resources
+
+Map Box: https://medium.com/geekculture/building-an-interactive-map-with-mapbox-react-f335384f4863
+
