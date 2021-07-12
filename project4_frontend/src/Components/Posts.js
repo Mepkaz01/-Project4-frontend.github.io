@@ -22,6 +22,8 @@ const Posts = (props) => {
                     <li>Traveler's Tips: {post.tips}</li>
                     <li>Budget: {post.cost} USD</li>
                     <img src={post.image} alt="pic" width="400" height="300"/>
+                    <li>Useful: {post.useful} votes</li>
+                    <button onClick={() => props.updateTweet(props.tweet.id)}>Was This Useful?</button>
                 </div>
             )}        
         </div>
