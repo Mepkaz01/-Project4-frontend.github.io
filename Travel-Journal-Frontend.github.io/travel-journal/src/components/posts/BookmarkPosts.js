@@ -8,12 +8,13 @@ class BookmarkPosts extends Component {
         super(props)
         this.state = {
              posts: [],
+             favoriteList: {},
              favorites: []
                                       
             }             
     }
     
-    componentDidMount =()=>{
+    fetchPosts =()=>{
         axios.get("http://localhost:3001/post/all")
         .then(resp =>{
             this.setState({
@@ -24,15 +25,24 @@ class BookmarkPosts extends Component {
         )
     }
     
-    componentDidMount =()=>{
+    fetchFavs =()=>{
         axios.get("http://localhost:3001/favorite/all")
         .then(resp =>{
+            const data = resp.data
             this.setState({
-                favorites: resp.data
+                favoriteList: data,
+                favorites: Object.keys(data)
+
                 })
-            console.log(resp.data)     
+            console.log(data)    
             }
         )
+    }
+
+    componentDidMount =() => {
+
+        this.fetchPosts();
+        this.fetchFavs();
     }
 
     thousands_separators = (num) => 
@@ -75,6 +85,7 @@ class BookmarkPosts extends Component {
         }  
 
     validateFav = (id) => {
+        console.log()
         for (let i=0; i < this.state.favorites.id; i++) {
             
             if (this.state.favorites[i].postId == this.state.posts.id) {
@@ -87,6 +98,7 @@ class BookmarkPosts extends Component {
 
     render = ()=>{
         console.log(this.props.user.id)
+        console.log(this.state.favorites.userId)
         return(
             <div>
                
