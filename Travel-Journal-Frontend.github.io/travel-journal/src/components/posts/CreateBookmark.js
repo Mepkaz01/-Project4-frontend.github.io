@@ -8,8 +8,8 @@ class CreateBookmark extends Component {
     super(props)
     this.state={
         posts: [],
-        post: []
-             
+        post: [],
+        favorties: []     
         
     };
 }
