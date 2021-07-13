@@ -12,7 +12,6 @@ import AdminPosts from "./components/posts/AdminPosts"
 import CreatePost from "./components/posts/CreatePost"
 import PostEdit from "./components/posts/PostEdit"
 import PostDelete from "./components/posts/PostDelete"
-
 import './App.css';
 
 function App() {
@@ -44,7 +43,6 @@ function App() {
         <Route path="/postedit/:indx" render={(props) => <PostEdit {...props}/>}/>
   
         <Route path="/postdelete/:indx" render={ (props) =><PostDelete {...props}/>}/>
-  
        
       </div>
     );

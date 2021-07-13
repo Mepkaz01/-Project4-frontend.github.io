@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { Component} from 'react'
 import { Link, Route } from  'react-router-dom'
 
-class Posts extends Component {
+class CreateBookmark extends Component {
 
     constructor(props){ 
     super(props)
@@ -22,6 +22,59 @@ componentDidMount =()=>{
             }) 
         }
     )
+}
+
+componentDidMount =()=>{
+    axios.get("http://localhost:3001/favorite/all")
+    .then(resp =>{
+        this.setState({
+            favorites: resp.data
+            })
+        console.log(resp.data)     
+        }
+    )
+}
+
+addFav = (favoriteId) => {
+            
+    const newFav = {favoriteId: this.state.favorites.id}
+        axios.post(`http://localhost:3001/favorite/${favoriteId}/profile/${this.props.user.id}`, newFav)
+        .then(response => {
+        axios.get(`http://localhost:3001/favorite/${favoriteId}profile/${this.props.user.id}`)
+        .then(resp => {
+                    
+        this.setState({
+            favorites: resp.data
+        })
+                    
+    })
+    })
+} 
+
+delFav = (favoriteId) => {
+                
+    axios.delete(`http://localhost:3001/favorite/${favoriteId}`)
+        .then(response => {
+    axios.get(`http://localhost:3001/favorite${favoriteId}/profile/${this.props.user.id}`)
+        .then(resp => {
+            
+            this.setState({
+                favorites:resp.data
+            })
+            
+        })
+        })
+    }  
+
+validateFav = (id) => {
+    for (let i=0; i < this.state.favorites.id; i++) {
+        
+        if (this.state.favorites[i].postId == this.state.posts.id) {
+            this.favoriteId = this.state.favorites[i].id
+            return true
+        }
+    }
+    return false
 }
 
 thousands_separators = (num) => 
@@ -77,7 +130,11 @@ render = (props)=>{
                     <li>Where To Stay: {post.whereToStay}</li>
                     <li>Traveler's Tips: {post.tips}</li>
                     <li>Budget: {this.thousands_separators(post.cost)} USD</li>
+                    <li>Bookmark: {post.favorite}</li>
                     <img src={post.image} alt="pic" width="400" height="300"/>
+                    {this.validateFav(post.favorite)}                    
+                    ? <button onClick={() => this.delFav(this.favoriteID)}>Remove Bookmark</button>
+                    : <button onClick={() => this.addFav(this.state.post.favorite, this.props.favorites.id, this.props.userId)}>Add Bookmark</button>
                 </div>
             )}
             </div>
@@ -90,4 +147,4 @@ render = (props)=>{
     )
 }
 }
-export default Posts;
+export default CreateBookmark;
