@@ -13,7 +13,7 @@ import CreatePost from "./components/posts/CreatePost"
 import PostEdit from "./components/posts/PostEdit"
 import PostDelete from "./components/posts/PostDelete"
 import CreateBookmark from "./components/posts/CreateBookmark"
-import './App.css';
+
 
 function App() {
     return (

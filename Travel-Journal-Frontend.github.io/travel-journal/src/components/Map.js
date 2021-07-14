@@ -12,11 +12,11 @@ class Map extends Component {
     super()
     this.state = {
       viewport: {
-        width: '50vw',
-        height: '50vh',
+        width: '75vw',
+        height: '70vh',
         latitude: 24.0361,
         longitude: -3.0438,
-        zoom: 0.83
+        zoom: 1.75
       },
       currMarker: null,
       markers: [],
@@ -80,7 +80,7 @@ class Map extends Component {
         mapboxApiAccessToken={mapboxToken}
         mapStyle="mapbox://styles/mapbox/streets-v10"
       >
-        <button className="btn" onClick={this.addMarker}>Add Marker</button>
+        <button className="btn" onClick={this.addMarker}>Add <i class="fas fa-map-pin"></i></button>
         {markers.map((marker, idx) => {
           return (
             <Marker
@@ -125,3 +125,4 @@ class Map extends Component {
 }
 
 export default Map;
+

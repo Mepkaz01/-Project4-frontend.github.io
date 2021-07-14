@@ -8,7 +8,6 @@ class BookmarkPosts extends Component {
         super(props)
         this.state = {
              posts: [],
-             favoriteList: {},
              favorites: []
                                       
             }             
@@ -30,8 +29,7 @@ class BookmarkPosts extends Component {
         .then(resp =>{
             const data = resp.data
             this.setState({
-                favoriteList: data,
-                favorites: Object.keys(data)
+                favorites: data
 
                 })
             console.log(data)    
@@ -98,7 +96,7 @@ class BookmarkPosts extends Component {
 
     render = ()=>{
         console.log(this.props.user.id)
-        console.log(this.state.favorites.userId)
+        console.log(this.state.favorites[0].userId)
         return(
             <div>
                
@@ -108,7 +106,7 @@ class BookmarkPosts extends Component {
                 <div>
 
                 {this.state.posts.map(post => {
-                    return this.state.favorites.userId === this.props.user.id ?
+                    return this.state.favorites[0].userId === this.props.user.id ?
                     <div>
                         <li>Date: {post.createdAt}</li>
                         <li>Country: {post.country}</li>

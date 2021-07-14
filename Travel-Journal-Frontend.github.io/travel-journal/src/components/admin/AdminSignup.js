@@ -1,6 +1,14 @@
 import React, {Component} from "react";
 import { Link, Route } from "react-router-dom";
 import axios from "axios";
+import {
+    MDBNavbar,
+    MDBNavbarNav,
+    MDBNavbarItem,
+    MDBNavbarLink,
+    MDBInput,
+    MDBBtn   
+  } from 'mdb-react-ui-kit';
 
 class AdminSignup extends Component {
     constructor() {
@@ -52,31 +60,62 @@ class AdminSignup extends Component {
         return (
             
             <div>
-                <nav>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/about" >About</Link></li>
-                    {/* <li><Link to="/posts">Travel Posts</Link></li> */}
-                </nav>
                 <div>
-                    <h2>SIGN UP</h2>
-                    <form onSubmit={this.handleSubmit}>
-                        <div><label>Name: </label><input onChange={this.handleChange} type="text" name="name" placeholder="name"/></div>
-                        <div><label>Username: </label><input onChange={this.handleChange} type="text" name="username" placeholder="username"/></div>
-                        <div><label>Password: </label><input onChange={this.handleChange} type="password" name="password" placeholder="password"/></div>
-                        <div><label>About: </label><input onChange={this.handleChange} type="text" name="about" placeholder="about"/></div>
-                        <div><label>Photo: </label><input onChange={this.handleChange} type="img" name="photo" placeholder="photo"/></div>
-                        <div><label>Bucket List 1: </label><input onChange={this.handleChange} type="text" name="bucketList1" placeholder="bucketlist1"/></div>
-                        <div><label>Bucket Photo 1: </label><input onChange={this.handleChange} type="img" name="bucketPhoto1" placeholder="bucketphoto1"/></div>
-                        <div><label>Bucket List 2: </label><input onChange={this.handleChange} type="text" name="bucketList2" placeholder="bucketlist2"/></div>
-                        <div><label>Bucket Photo 2: </label><input onChange={this.handleChange} type="img" name="bucketPhoto2" placeholder="bucketphoto2"/></div>
-                        <div><label>Bucket List 3: </label><input onChange={this.handleChange} type="text" name="bucketList3" placeholder="bucketlist3"/></div>
-                        <div><label>Bucket Photo 3: </label><input onChange={this.handleChange} type="img" name="bucketPhoto3" placeholder="bucketphoto3"/></div>
-                        <div><label>Bucket List 4: </label><input onChange={this.handleChange} type="text" name="bucketList4" placeholder="bucketlist4"/></div>
-                        <div><label>Bucket Photo 4: </label><input onChange={this.handleChange} type="img" name="bucketPhoto4" placeholder="bucketphoto4"/></div>
-                        <div><label>Bucket List 5: </label><input onChange={this.handleChange} type="text" name="bucketList5" placeholder="bucketlist5"/></div>
-                        <div><label>Bucket Photo 5: </label><input onChange={this.handleChange} type="img" name="bucketPhoto5" placeholder="bucketphoto5"/></div>
-                        
-                        <input type="submit" value="Sign Up"/> 
+                    <MDBNavbar expand='lg' light bgColor='light'>
+                        <MDBNavbarNav className="d-flex justify-content-around">
+                            <MDBNavbarItem>
+                            <MDBNavbarLink style={{color: "blue"}} active aria-current='page' href="/">
+                                HOME
+                            </MDBNavbarLink>
+                            </MDBNavbarItem>
+                            <MDBNavbarItem>
+                            <MDBNavbarLink style={{color: "purple"}} active aria-current='page' href='/about'>
+                                ABOUT ME
+                            </MDBNavbarLink>
+                            </MDBNavbarItem>
+                            <MDBNavbarItem>
+                            <MDBNavbarLink style={{color: "red"}} active aria-current='page' href='/posts'>
+                                TRAVEL POSTS
+                            </MDBNavbarLink>
+                            </MDBNavbarItem>
+                        </MDBNavbarNav> 
+                    </MDBNavbar>
+                </div>    
+                <div  className='d-flex flex-column justify-content-center' style={{margin: '150px 1000px', textAlign: 'center', alignContent: 'center' }}>
+                    <h2 style={{color: "rgb(65, 59, 59)", fontFamily: "Garamond, serif", fontSize: "300%", fontWeight: "bold"}}>ADMIN REGISTRATION</h2>
+                    <br></br>
+                    <form style={{width: "23rem"}} onSubmit={this.handleSubmit}>
+                        <MDBInput onChange={this.handleChange} label='Name' id='typeName' type='text' name='name' />
+                        <br></br> 
+                        <MDBInput onChange={this.handleChange} label='Username' id='typeUsername' type='text' name='username' />
+                        <br></br> 
+                        <MDBInput onChange={this.handleChange} label='Password' id='typePassword' type='password' name='password' />
+                        <br></br>
+                        <MDBInput onChange={this.handleChange} label='About You' id='textAreaExample' textarea rows={4} type='text' name='about' />
+                        <br></br>
+                        <MDBInput onChange={this.handleChange} label='Profile Photo' id='typeURL' type='url' name='photo' />
+                        <br></br> 
+                        <MDBInput onChange={this.handleChange} label='Bucket List 1' id='typeText' type='text' name='bucketList1' />
+                        <br></br>
+                        <MDBInput onChange={this.handleChange} label='Bucket Photo 1' id='typeURL' type='url' name='bucketPhoto1' />
+                        <br></br>
+                        <MDBInput onChange={this.handleChange} label='Bucket List 2' id='typeText' type='text' name='bucketList2' />
+                        <br></br>
+                        <MDBInput onChange={this.handleChange} label='Bucket Photo 2' id='typeURL' type='url' name='bucketPhoto2' />
+                        <br></br>
+                        <MDBInput onChange={this.handleChange} label='Bucket List 3' id='typeText' type='text' name='bucketList3' />
+                        <br></br>
+                        <MDBInput onChange={this.handleChange} label='Bucket Photo 3' id='typeURL' type='url' name='bucketPhoto3' />
+                        <br></br>
+                        <MDBInput onChange={this.handleChange} label='Bucket List 4' id='typeText' type='text' name='bucketList4' />
+                        <br></br>
+                        <MDBInput onChange={this.handleChange} label='Bucket Photo 4' id='typeURL' type='url' name='bucketPhoto4' />
+                        <br></br>
+                        <MDBInput onChange={this.handleChange} label='Bucket List 5' id='typeText' type='text' name='bucketList5' />
+                        <br></br>
+                        <MDBInput onChange={this.handleChange} label='Bucket Photo 5' id='typeURL' type='url' name='bucketPhoto5' />
+                        <br></br>
+                        <MDBBtn style={{margin: '1325px 980px', textAlign: 'center', alignContent: 'center' }}>Submit Registration</MDBBtn>  
                     </form>
                 </div>
             </div>      

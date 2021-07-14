@@ -1,6 +1,14 @@
 import React, {Component} from "react"
 import axios from "axios"
 import { Link } from "react-router-dom";
+import {
+    MDBNavbar,
+    MDBNavbarNav,
+    MDBNavbarItem,
+    MDBNavbarLink,
+    MDBInput,
+    MDBBtn   
+  } from 'mdb-react-ui-kit';
 
 class AdminLogin extends Component {
     constructor() {
@@ -41,17 +49,36 @@ class AdminLogin extends Component {
         return (
             
             <div>
-                <nav>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/about" >About</Link></li>
-                    {/* <li><Link to="/posts">Travel Posts</Link></li> */}
-                </nav>
                 <div>
-                    <h2>LOG IN</h2>
-                    <form onSubmit={this.handleSubmit}>
-                        <div><label>Username: </label><input onChange={this.handleChange} type="text" name="username" placeholder="username" /></div>
-                        <div><label>Password: </label><input onChange={this.handleChange} type="password" name="password" placeholder="password" /></div>
-                        <input type="submit" value="Login"/>
+                    <MDBNavbar expand='lg' light bgColor='light'>
+                        <MDBNavbarNav className="d-flex justify-content-around">
+                            <MDBNavbarItem>
+                            <MDBNavbarLink style={{color: "blue"}} active aria-current='page' href="/">
+                                HOME
+                            </MDBNavbarLink>
+                            </MDBNavbarItem>
+                            <MDBNavbarItem>
+                            <MDBNavbarLink style={{color: "purple"}} active aria-current='page' href='/about'>
+                                ABOUT ME
+                            </MDBNavbarLink>
+                            </MDBNavbarItem>
+                            <MDBNavbarItem>
+                            <MDBNavbarLink style={{color: "red"}} active aria-current='page' href='/posts'>
+                                TRAVEL POSTS
+                            </MDBNavbarLink>
+                            </MDBNavbarItem>
+                        </MDBNavbarNav> 
+                    </MDBNavbar>
+                </div>    
+                <div className='d-flex flex-column justify-content-center' style={{margin: '150px 1000px', textAlign: 'center', alignContent: 'center' }}>
+                    <h2 style={{color: "rgb(65, 59, 59)", fontFamily: "Garamond, serif", fontSize: "300%", fontWeight: "bold"}}>ADMIN LOG IN</h2>
+                    <br></br>
+                    <form style={{width: "23rem"}} onSubmit={this.handleSubmit}>
+                        <MDBInput onChange={this.handleChange} label='Username' id='typeUsername' type='text' name='username' />
+                        <br></br>
+                        <MDBInput onChange={this.handleChange} label='Password' id='typePassword' type='password' name='password' />
+                        <br></br>
+                        <MDBBtn style={{margin: '400px 1070px', textAlign: 'center', alignContent: 'center' }}>Log In</MDBBtn>
                     </form>
                 </div>
             </div>
