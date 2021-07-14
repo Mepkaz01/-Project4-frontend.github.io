@@ -38,10 +38,10 @@ function App() {
                         </MDBNavbarLink>
                         </MDBNavbarItem>
                     </MDBNavbarNav>    
-                    <form className='d-flex input-group w-auto'>
-                        <input style={{right: "50px"}}type='search' className='form-control' placeholder='Country Name' aria-label='Search' />
-                        <MDBBtn outline style={{top: "0px", right: "47px", padding: "2px"}}><i class="fas fa-search"></i></MDBBtn>
-                    </form>
+                    {/* <form className='d-flex input-group w-auto'>
+                        <input style={{right: "50px"}}type='search' className='form-control' placeholder='Country Name' aria-label='Search' /> */}
+                        <Link to="/search"><MDBBtn outline style={{top: "1110px", right: "1080px", padding: "2px"}}>Lookup Country <i class="fas fa-search"></i></MDBBtn></Link>
+                    {/* </form> */}
                 </MDBNavbar>
                 </div>
                 <div className='p-5 text-center bg-image'
