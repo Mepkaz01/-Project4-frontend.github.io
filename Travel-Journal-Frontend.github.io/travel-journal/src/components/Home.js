@@ -4,10 +4,8 @@ import {
   MDBNavbarNav,
   MDBNavbarItem,
   MDBNavbarLink,
-  MDBBtn,
  
 } from 'mdb-react-ui-kit';
-import { Link, Route } from "react-router-dom";
 import Map from "./Map";
 import Footer from './Footer';
 
@@ -33,15 +31,11 @@ function App() {
                         </MDBNavbarLink>
                         </MDBNavbarItem>
                         <MDBNavbarItem>
-                        <MDBNavbarLink style={{color: "red"}} active aria-current='page' href='/posts'>
-                            TRAVEL POSTS
+                        <MDBNavbarLink style={{color: "red"}} active aria-current='page' href='/search'>
+                            COUNTRY <i class="fas fa-search"></i>
                         </MDBNavbarLink>
                         </MDBNavbarItem>
-                    </MDBNavbarNav>    
-                    {/* <form className='d-flex input-group w-auto'>
-                        <input style={{right: "50px"}}type='search' className='form-control' placeholder='Country Name' aria-label='Search' /> */}
-                        <Link to="/search"><MDBBtn outline style={{top: "1110px", right: "1080px", padding: "2px"}}>Lookup Country <i class="fas fa-search"></i></MDBBtn></Link>
-                    {/* </form> */}
+                    </MDBNavbarNav>   
                 </MDBNavbar>
                 </div>
                 <div className='p-5 text-center bg-image'

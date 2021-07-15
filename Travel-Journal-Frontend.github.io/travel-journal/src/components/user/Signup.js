@@ -7,7 +7,8 @@ import {
     MDBNavbarItem,
     MDBNavbarLink,
     MDBInput,
-    MDBBtn   
+    MDBBtn,
+    MDBTabsLink   
   } from 'mdb-react-ui-kit';
 
 class Signup extends Component {
@@ -68,9 +69,9 @@ class Signup extends Component {
                             </MDBNavbarLink>
                             </MDBNavbarItem>
                             <MDBNavbarItem>
-                            <MDBNavbarLink style={{color: "red"}} active aria-current='page' href='/posts'>
-                                TRAVEL POSTS
-                            </MDBNavbarLink>
+                            <MDBTabsLink style={{color: "red"}} active aria-current='page' target="_blank" href='https://travel.state.gov/content/travel.html'>
+                                TRAVEL.GOV
+                            </MDBTabsLink> 
                             </MDBNavbarItem>
                         </MDBNavbarNav> 
                     </MDBNavbar>

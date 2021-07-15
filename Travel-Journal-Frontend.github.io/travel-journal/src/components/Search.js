@@ -2,6 +2,16 @@ import React, { Component } from 'react';
 import { Link, Route } from "react-router-dom";
 import axios from "axios";
 import Country from "./Country";
+import {
+  MDBNavbar,
+  MDBNavbarNav,
+  MDBNavbarItem,
+  MDBNavbarLink,
+  MDBBtn,
+  MDBInput,
+  MDBTabsLink
+
+} from 'mdb-react-ui-kit';
 
 class Search extends Component {
     constructor(){
@@ -15,7 +25,6 @@ class Search extends Component {
       }  
     
       fetchData = (inputValue) => {
-        console.log(inputValue)
         axios.get(`https://restcountries.eu/rest/v2/name/${inputValue}`)
         .then( response => {
           this.setState({
@@ -41,23 +50,61 @@ class Search extends Component {
     render = () => {
         return (
             <div>
+                <div>
+                <MDBNavbar expand='lg' light bgColor='light'>
+                   <MDBNavbarNav className="d-flex justify-content-around">
+                        <MDBNavbarItem>
+                        <MDBNavbarLink style={{color: "blue"}} active aria-current='page' href="/login">
+                            LOG IN
+                        </MDBNavbarLink>
+                        </MDBNavbarItem>
+                        <MDBNavbarItem>
+                        <MDBNavbarLink style={{color: "green"}} active aria-current='page' href='/signup'>
+                            REGISTER
+                        </MDBNavbarLink>
+                        </MDBNavbarItem>
+                        <MDBNavbarItem>
+                        <MDBNavbarLink style={{color: "purple"}} active aria-current='page' href='/about'>
+                            ABOUT ME
+                        </MDBNavbarLink>
+                        </MDBNavbarItem>
+                        <MDBNavbarItem>
+                          <MDBTabsLink style={{color: "red"}} active aria-current='page' target="_blank" href='https://travel.state.gov/content/travel.html'>
+                            TRAVEL.GOV
+                          </MDBTabsLink>                        
+                        </MDBNavbarItem>
+                    </MDBNavbarNav>   
+                </MDBNavbar>
+                </div >
+                <div className="d-flex justify-content-center" style={{padding: '110px'}}>
                 <form onSubmit={this.handleSubmit}>
-                        <h1>Look Up Country Information</h1>
-                        <input 
+                      <div>
+                        <h1 style={{color: "rgb(65, 59, 59)", fontFamily: "Garamond, serif", fontSize: "300%", fontWeight: "bold"}}>Country Information</h1>
+                      </div>  
+                        <br></br>
+                        <br></br>
+                      <div>  
+                        <MDBInput
+                            label='Country'
+                            id='typeText'
                             type="text" 
                             name="country" 
-                            placeholder="Country Name" 
+                            placeholder="Enter Country Name" 
                             value={this.state.value} 
                             onChange={this.handleChange}
                         />
-                        <input type="submit" value="submit"/>
+                      </div>
+                      <div>  
+                        <MDBBtn style={{margin: '236px 829px'}}><i class="fas fa-search"></i></MDBBtn>
+                      </div>  
                 </form>
+                </div>
                 <div>
                 {this.state.ready ? 
                     <Country 
                     country={this.state.country}/>
                     :
-                    <div>Enter Country Name</div>      
+                    null      
                     }                                        
                 </div>
             </div>

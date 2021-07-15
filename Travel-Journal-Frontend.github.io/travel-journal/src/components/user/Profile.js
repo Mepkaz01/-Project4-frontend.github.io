@@ -2,7 +2,6 @@ import React, {Component} from "react";
 import { Link, Route } from "react-router-dom";
 import axios from "axios";
 import ProfileEdit from "./ProfileEdit";
-import BookmarkPosts from "../posts/BookmarkPosts";
 
 
 class Profile extends Component {
@@ -15,9 +14,9 @@ class Profile extends Component {
                 password: "",
                 interest: "",
                 photo: "",
-                id: 0
+                id: 0               
+                
             },
-            toggleView:false
         }
     }
 
@@ -62,12 +61,9 @@ class Profile extends Component {
         })       
         
     }
+
   
-    toggleView= () =>{
-        
-        this.setState({toggleView:!this.state.toggleView})
-    }
-    
+      
     render() {
       
         const user = this.state.data
@@ -90,17 +86,8 @@ class Profile extends Component {
                     handleChange={this.handleChange}
                     handleSubmit={this.handleSubmit}
                     handleDelete={this.handleDelete}
-                  />
-                </div>   
-                <div>
-                    <button onClick={this.toggleView}>View Bookmark Posts</button> 
-                    <Link to={`/bookmarkposts/${user.id}`}><button>Create Bookmark Posts</button></Link> 
-                    {this.state.toggleView ?
-                    <BookmarkPosts
-                        user={user}                        
-                    />                      
-                    : null}                      
-                </div>
+                  />                   
+                </div>                
             </div>
         )
     }

@@ -13,12 +13,11 @@ import CreatePost from "./components/posts/CreatePost"
 import PostEdit from "./components/posts/PostEdit"
 import PostDelete from "./components/posts/PostDelete"
 import Search from "./components/Search"
-import CreateBookmark from "./components/posts/CreateBookmark"
 
 
 function App() {
     return (
-      <div className="App">
+      <div>
        
         <Route path="/" exact render={() => <Home />} /> 
 
@@ -47,11 +46,7 @@ function App() {
         <Route path="/postdelete/:indx" render={ (props) =><PostDelete {...props}/>}/>
 
         <Route path="/search" render={ () =><Search />}/>
-
-        <Route path="/bookmarkposts/:userid" render={ (props) =><CreateBookmark {...props}/>}/>
-
-
-       
+        
       </div>
     );
   }
