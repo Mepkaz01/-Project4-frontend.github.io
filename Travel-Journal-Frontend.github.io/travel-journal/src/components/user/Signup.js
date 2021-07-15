@@ -69,6 +69,11 @@ class Signup extends Component {
                             </MDBNavbarLink>
                             </MDBNavbarItem>
                             <MDBNavbarItem>
+                            <MDBNavbarLink style={{color: "orange"}} active aria-current='page' href='/search'>
+                                COUNTRY <i class="fas fa-search"></i>
+                            </MDBNavbarLink>
+                            </MDBNavbarItem>
+                            <MDBNavbarItem>
                             <MDBTabsLink style={{color: "red"}} active aria-current='page' target="_blank" href='https://travel.state.gov/content/travel.html'>
                                 TRAVEL.GOV
                             </MDBTabsLink> 
@@ -90,7 +95,7 @@ class Signup extends Component {
                         <br></br>
                         <MDBInput onChange={this.handleChange} label='Profile Photo' id='typeURL' type='url' name='photo' />
                         <br></br> 
-                        <MDBBtn style={{margin: '655px 1000px', textAlign: 'center', alignContent: 'center' }}>Submit Registration</MDBBtn>         
+                        <MDBBtn outline rounded color='success'>Submit Registration</MDBBtn>         
                     </form>
                 </div>
             </div> 

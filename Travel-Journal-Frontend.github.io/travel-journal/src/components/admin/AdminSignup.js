@@ -7,7 +7,8 @@ import {
     MDBNavbarItem,
     MDBNavbarLink,
     MDBInput,
-    MDBBtn   
+    MDBBtn,
+    MDBTabsLink   
   } from 'mdb-react-ui-kit';
 
 class AdminSignup extends Component {
@@ -61,30 +62,40 @@ class AdminSignup extends Component {
             
             <div>
                 <div>
-                    <MDBNavbar expand='lg' light bgColor='light'>
-                        <MDBNavbarNav className="d-flex justify-content-around">
-                            <MDBNavbarItem>
-                            <MDBNavbarLink style={{color: "blue"}} active aria-current='page' href="/">
-                                HOME
-                            </MDBNavbarLink>
-                            </MDBNavbarItem>
-                            <MDBNavbarItem>
-                            <MDBNavbarLink style={{color: "purple"}} active aria-current='page' href='/about'>
-                                ABOUT ME
-                            </MDBNavbarLink>
-                            </MDBNavbarItem>
-                            <MDBNavbarItem>
-                            <MDBNavbarLink style={{color: "red"}} active aria-current='page' href='/posts'>
-                                TRAVEL POSTS
-                            </MDBNavbarLink>
-                            </MDBNavbarItem>
-                        </MDBNavbarNav> 
-                    </MDBNavbar>
+                <MDBNavbar expand='lg' light bgColor='light'>
+                   <MDBNavbarNav className="d-flex justify-content-around">
+                        <MDBNavbarItem>
+                        <MDBNavbarLink style={{color: "blue"}} active aria-current='page' href="/login">
+                            LOG IN
+                        </MDBNavbarLink>
+                        </MDBNavbarItem>
+                        <MDBNavbarItem>
+                        <MDBNavbarLink style={{color: "green"}} active aria-current='page' href='/signup'>
+                            REGISTER
+                        </MDBNavbarLink>
+                        </MDBNavbarItem>
+                        <MDBNavbarItem>
+                        <MDBNavbarLink style={{color: "purple"}} active aria-current='page' href='/about'>
+                            ABOUT ME
+                        </MDBNavbarLink>
+                        </MDBNavbarItem>
+                        <MDBNavbarItem>
+                        <MDBNavbarLink style={{color: "orange"}} active aria-current='page' href='/search'>
+                            COUNTRY <i class="fas fa-search"></i>
+                        </MDBNavbarLink>
+                        </MDBNavbarItem>
+                        <MDBNavbarItem>
+                        <MDBTabsLink style={{color: "red"}} active aria-current='page' target="_blank" href='https://travel.state.gov/content/travel.html'>
+                            TRAVEL.GOV
+                        </MDBTabsLink> 
+                        </MDBNavbarItem>
+                    </MDBNavbarNav>   
+                </MDBNavbar>
                 </div>    
                 <div  className='d-flex flex-column justify-content-center' style={{margin: '150px 1000px', textAlign: 'center', alignContent: 'center' }}>
                     <h2 style={{color: "rgb(65, 59, 59)", fontFamily: "Garamond, serif", fontSize: "300%", fontWeight: "bold"}}>ADMIN REGISTRATION</h2>
                     <br></br>
-                    <form style={{width: "23rem"}} onSubmit={this.handleSubmit}>
+                    <form onSubmit={this.handleSubmit}>
                         <MDBInput onChange={this.handleChange} label='Name' id='typeName' type='text' name='name' />
                         <br></br> 
                         <MDBInput onChange={this.handleChange} label='Username' id='typeUsername' type='text' name='username' />
@@ -115,7 +126,7 @@ class AdminSignup extends Component {
                         <br></br>
                         <MDBInput onChange={this.handleChange} label='Bucket Photo 5' id='typeURL' type='url' name='bucketPhoto5' />
                         <br></br>
-                        <MDBBtn style={{margin: '1325px 980px', textAlign: 'center', alignContent: 'center' }}>Submit Registration</MDBBtn>  
+                        <MDBBtn outline rounded className='mx-2' color='info'>Submit Registration</MDBBtn>  
                     </form>
                 </div>
             </div>      

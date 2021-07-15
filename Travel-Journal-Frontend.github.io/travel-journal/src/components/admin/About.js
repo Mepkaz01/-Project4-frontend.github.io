@@ -59,6 +59,11 @@ render = () => {
                     </MDBNavbarLink>
                     </MDBNavbarItem>
                     <MDBNavbarItem>
+                    <MDBNavbarLink style={{color: "red"}} active aria-current='page' href='/search'>
+                        COUNTRY <i class="fas fa-search"></i>
+                    </MDBNavbarLink>
+                    </MDBNavbarItem>
+                    <MDBNavbarItem>
                     <MDBTabsLink style={{color: "red"}} active aria-current='page' target="_blank" href='https://travel.state.gov/content/travel.html'>
                         TRAVEL.GOV
                     </MDBTabsLink> 

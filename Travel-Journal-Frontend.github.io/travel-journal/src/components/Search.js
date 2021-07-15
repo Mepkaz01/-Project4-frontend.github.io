@@ -76,14 +76,14 @@ class Search extends Component {
                     </MDBNavbarNav>   
                 </MDBNavbar>
                 </div >
-                <div className="d-flex justify-content-center" style={{padding: '110px'}}>
+                <div>
                 <form onSubmit={this.handleSubmit}>
-                      <div>
+                      <div className="d-flex justify-content-center" style={{padding: "100px 0px 0px"}}>
                         <h1 style={{color: "rgb(65, 59, 59)", fontFamily: "Garamond, serif", fontSize: "300%", fontWeight: "bold"}}>Country Information</h1>
                       </div>  
                         <br></br>
                         <br></br>
-                      <div>  
+                      <div className="d-flex flex-row justify-content-center">  
                         <MDBInput
                             label='Country'
                             id='typeText'
@@ -93,10 +93,8 @@ class Search extends Component {
                             value={this.state.value} 
                             onChange={this.handleChange}
                         />
+                        <MDBBtn><i class="fas fa-search"></i></MDBBtn>
                       </div>
-                      <div>  
-                        <MDBBtn style={{margin: '236px 829px'}}><i class="fas fa-search"></i></MDBBtn>
-                      </div>  
                 </form>
                 </div>
                 <div>

@@ -42,6 +42,7 @@ class Login extends Component {
         })
         .catch(err => {
             console.log(err)
+            alert("Wrong Email or Password. Try Again")
         })
     }
 
@@ -70,6 +71,11 @@ class Login extends Component {
                             </MDBNavbarLink>
                             </MDBNavbarItem>
                             <MDBNavbarItem>
+                            <MDBNavbarLink style={{color: "orange"}} active aria-current='page' href='/search'>
+                                COUNTRY <i class="fas fa-search"></i>
+                            </MDBNavbarLink>
+                            </MDBNavbarItem>
+                            <MDBNavbarItem>
                             <MDBTabsLink style={{color: "red"}} active aria-current='page' target="_blank" href='https://travel.state.gov/content/travel.html'>
                                 TRAVEL.GOV
                             </MDBTabsLink>    
@@ -80,12 +86,12 @@ class Login extends Component {
                 <div className='d-flex flex-column justify-content-center' style={{margin: '150px 1000px', textAlign: 'center', alignContent: 'center' }}>
                     <h1 style={{color: "rgb(65, 59, 59)", fontFamily: "Garamond, serif", fontSize: "300%", fontWeight: "bold"}}>LOG IN</h1>
                     <br></br>
-                    <form style={{width: "23rem"}} onSubmit={this.handleSubmit}>
+                    <form onSubmit={this.handleSubmit}>
                         <MDBInput onChange={this.handleChange} label='Email' id='typeEmail' type='email' name='email' />
                         <br></br>
                         <MDBInput onChange={this.handleChange} label='Password' id='typePassword' type='password' name='password' />
                         <br></br>
-                        <MDBBtn style={{margin: '400px 1070px', textAlign: 'center', alignContent: 'center' }}>Log In</MDBBtn>
+                        <MDBBtn outline rounded>Log In</MDBBtn>
                     </form>    
                 </div>
             </div>

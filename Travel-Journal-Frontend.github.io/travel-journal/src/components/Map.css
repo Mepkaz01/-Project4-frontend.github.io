@@ -6,7 +6,7 @@
 }    
 
 
-.btn {
+.pin {
 
     text-align:center;
     position: absolute;
@@ -24,7 +24,7 @@
     cursor: pointer;
 }
 
-.btn:hover {
+.pin:hover {
     background: rgba(0,0,0,0.4); 
     color: greenyellow;
 }

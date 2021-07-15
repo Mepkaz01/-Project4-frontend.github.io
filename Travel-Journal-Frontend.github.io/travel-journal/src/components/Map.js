@@ -80,7 +80,7 @@ class Map extends Component {
         mapboxApiAccessToken={mapboxToken}
         mapStyle="mapbox://styles/mapbox/streets-v10"
       >
-        <button className="btn" onClick={this.addMarker}>Add <i class="fas fa-map-pin"></i></button>
+        <button className="pin" onClick={this.addMarker}>Add <i class="fas fa-map-pin"></i></button>
         {markers.map((marker, idx) => {
           return (
             <Marker
