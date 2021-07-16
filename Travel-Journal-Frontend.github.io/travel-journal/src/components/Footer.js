@@ -1,12 +1,7 @@
 import React from 'react';
 import {
-    MDBNavbar,
-    MDBContainer,
     MDBBtn,
     MDBIcon,
-    MDBNavbarNav,
-    MDBNavbarItem,
-    MDBNavbarLink,
     MDBFooter
   } from 'mdb-react-ui-kit';
   

@@ -53,7 +53,7 @@ class AdminSignup extends Component {
             this.props.history.push(`/adminedit/${resp.data.id}`)
         })
         .catch(err => {
-            console.log(err)
+            alert("Username already in used. Try Again")
         })
     }
 

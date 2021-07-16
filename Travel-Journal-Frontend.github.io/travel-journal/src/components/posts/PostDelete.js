@@ -20,7 +20,7 @@ class PostDelete extends Component {
 componentDidMount =()=>{
     axios.get(`http://localhost:3001/post/${this.props.match.params.indx}`)
     .then(resp =>{
-        console.log(resp)
+        
         this.setState({
                 post: resp.data
             })

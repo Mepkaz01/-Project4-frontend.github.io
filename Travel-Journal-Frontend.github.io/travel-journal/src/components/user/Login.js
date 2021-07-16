@@ -41,14 +41,13 @@ class Login extends Component {
             this.props.history.push(`/profile/${resp.data.id}`)  
         })
         .catch(err => {
-            console.log(err)
             alert("Wrong Email or Password. Try Again")
         })
     }
 
 
     render() {
-        console.log(this.props)
+        
         return (
             
             <div>

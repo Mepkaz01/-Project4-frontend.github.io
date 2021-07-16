@@ -42,12 +42,12 @@ class Signup extends Component {
             this.props.history.push(`/profile/${resp.data.id}`)
         })
         .catch(err => {
-            console.log(err)
+            alert("Not an email format. Try Again")
         })
     }
 
     render() {
-        console.log(this.state.data)
+        
         return (
             <div>
                 <div>

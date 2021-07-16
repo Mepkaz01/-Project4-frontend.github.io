@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { 
     MDBRow, 
     MDBCol,
-    MDBContainer,
     MDBCarousel,
     MDBCarouselInner,
     MDBCarouselItem,
@@ -31,7 +30,7 @@ class AdminPosts extends Component {
              
         axios.get("http://localhost:3001/post/all")
         .then(resp => {
-            console.log(resp)
+            
             this.setState ({
                 posts: resp.data
                
@@ -51,7 +50,7 @@ class AdminPosts extends Component {
 
     
     render = (props)=>{
-        console.log(this.props.admin.id)
+        
         return(
             <div>
                 <h1 style={{color: "rgb(65, 59, 59)", fontFamily: "Garamond, serif", fontSize: "300%", fontWeight: "bold", margin: "50px 0px 100px", textAlign: 'center', alignContent: 'center'}}>My Travel Posts</h1>
@@ -70,7 +69,6 @@ class AdminPosts extends Component {
                                 <p><strong>Traveler's Tips:</strong> {post.tips}</p>
                                 <p><strong>Budget:</strong> {this.thousands_separators(post.cost)} USD</p>
                             </MDBCol>
-
                             <MDBCol size='4' className='col-example'>
                                 <MDBCarousel showIndicators showControls>
                                     <MDBCarouselInner>
@@ -88,7 +86,6 @@ class AdminPosts extends Component {
                             </MDBCol>
                             </MDBRow>
                             <br></br>
-                            
                             <div className="d-flex justify-content-evenly" style={{padding: "50px"}}>
                             <Link to={`/postedit/${post.id}`}><MDBBtn style={{ backgroundColor: 'orange' }}>
                                 <MDBIcon className='me-2' fas icon='edit' />Edit Post</MDBBtn></Link>

@@ -160,14 +160,11 @@ render = (props)=>{
                         <MDBBtn onClick={this.filterTest} className='mx-2' color='dark' style={{fontSize: "125%"}}>
                             TEST
                         </MDBBtn>
-                    
                 </div>
                 <br></br>
                 <br></br>                
                 <div>
-
                 {this.state.post.map(post =>
-                
                 <MDBRow around>
                 <MDBCol style={{fontSize: "150%"}} size='4' className='col-example'>
                     <p><strong>Country:</strong> {post.country}</p>

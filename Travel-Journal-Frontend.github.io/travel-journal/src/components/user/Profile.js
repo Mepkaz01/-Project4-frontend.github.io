@@ -56,7 +56,7 @@ class Profile extends Component {
         event.preventDefault()
         axios.put(`http://localhost:3001/user/profile/${this.props.match.params.id}`, this.state.data)
         .then(resp => {
-            console.log("User Updated")
+            alert("User Updated")            
         })
     }
 
@@ -75,8 +75,6 @@ class Profile extends Component {
     render() {
       
         const user = this.state.data
-       
-
         return (
                 <div>
                     <MDBNavbar expand='lg' light bgColor='light'>

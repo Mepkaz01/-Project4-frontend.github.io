@@ -53,7 +53,7 @@ class CreatePost extends Component {
                 this.props.toggleView()
             })
             .catch(err => {
-                console.log(err)
+                alert("Post Created")
             })
         }
 
@@ -67,31 +67,22 @@ class CreatePost extends Component {
 
                     <MDBInput onChange={this.handleChange} label='Country' id='typeText' type='text' name='country' />
                     <br></br>
-
                     <MDBInput onChange={this.handleChange} label='City' id='typeText' type='text' name='city' />
                     <br></br>
-
                     <MDBInput onChange={this.handleChange} label='Things To Do' id='textAreaExample' textarea rows={3} type='text' name='thingsToDo' />
                     <br></br>
-
                     <MDBInput onChange={this.handleChange} label='Where To Eat' id='textAreaExample' textarea rows={3} type='text' name='whereToEat' />
                     <br></br>
-
 		            <MDBInput onChange={this.handleChange} label='Where To Stay' id='textAreaExample' textarea rows={3} type='text' name='whereToStay' />
                     <br></br>
-
 		            <MDBInput onChange={this.handleChange} label='Travelers Tips' id='textAreaExample' textarea rows={4} type='text' name='tips' />
                     <br></br>
-
 		            <MDBInput onChange={this.handleChange} label='Budget' id='typeText' type='text' name='cost' />
-                    <br></br>
-                                            
+                    <br></br>        
                     <MDBInput onChange={this.handleChange} label='Photo #1' id='typeURL' type='url' name='image1' />
                     <br></br>
-
                     <MDBInput onChange={this.handleChange} label='Photo #2' id='typeURL' type='url' name='image2' />
                     <br></br> 
-
 		            <MDBInput onChange={this.handleChange} label='Photo #3' id='typeURL' type='url' name='image3' />
                     <br></br> 
                     <input onChange={this.handleChange} type='hidden' name="adminId" value={this.props.admin.id} placeholder={this.props.admin.id}/>

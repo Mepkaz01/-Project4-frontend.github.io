@@ -73,7 +73,7 @@ class AdminEdit extends Component {
         event.preventDefault()
         axios.put(`http://localhost:3001/admin/profile/${this.props.match.params.id}`, this.state.data)
         .then(resp => {
-            console.log("User Updated")
+            alert("User Updated")
         })
     }
 
@@ -100,7 +100,6 @@ class AdminEdit extends Component {
     render() { 
         const admin = this.state.data   
         return (
-            
             <div>
                 <MDBNavbar expand='lg' light bgColor='light'>
                    <MDBNavbarNav className="d-flex justify-content-around">
@@ -136,49 +135,34 @@ class AdminEdit extends Component {
                 <form style={{width: "50rem", margin: '30px 775px'}} onSubmit={this.handleSubmit}>
                     <MDBInput onChange={this.handleChange} label='Name' id='typeName' type='text' name='name' value={admin.name}/>
                     <br></br>
-
                     <MDBInput onChange={this.handleChange} label='Username' id='typeUsername' type='text' name='username' value={admin.username}/>
                     <br></br>
-
                     <MDBInput onChange={this.handleChange} label='Password' id='typePassword' type='password' name='password' value={admin.password}/>
                     <br></br>
-
                     <MDBInput onChange={this.handleChange} label='About You' id='textAreaExample' textarea rows={4} type='text' name='about' value={admin.about}/>
-                    <br></br>
-                                            
+                    <br></br>          
                     <MDBInput onChange={this.handleChange} label='Profile Photo' id='typeURL' type='url' name='photo' value={admin.photo}/>
                     <br></br>
-
                     <MDBInput onChange={this.handleChange} label='Bucket # 1' id='typeText' type='text' name='bucketList1' value={admin.bucketList1}/>
                     <br></br>
-
                     <MDBInput onChange={this.handleChange} label='Bucket Photo 1' id='typeURL' type='url' name='bucketPhoto1' value={admin.bucketPhoto1}/>
                     <br></br> 
-
                     <MDBInput onChange={this.handleChange} label='Bucket # 2' id='typeText' type='text' name='bucketList2' value={admin.bucketList2}/>
                     <br></br>
-
                     <MDBInput onChange={this.handleChange} label='Bucket Photo 2' id='typeURL' type='url' name='bucketPhoto2' value={admin.bucketPhoto2}/>
                     <br></br> 
-
                     <MDBInput onChange={this.handleChange} label='Bucket # 3' id='typeText' type='text' name='bucketList3' value={admin.bucketList3}/>
                     <br></br>
-
                     <MDBInput onChange={this.handleChange} label='Bucket Photo 3' id='typeURL' type='url' name='bucketPhoto3' value={admin.bucketPhoto3}/>
                     <br></br> 
-
                     <MDBInput onChange={this.handleChange} label='Bucket # 4' id='typeText' type='text' name='bucketList4' value={admin.bucketList4}/>
                     <br></br>
-
                     <MDBInput onChange={this.handleChange} label='Bucket Photo 4' id='typeURL' type='url' name='bucketPhoto4' value={admin.bucketPhoto4}/>
                     <br></br> 
-
                     <MDBInput onChange={this.handleChange} label='Bucket # 5' id='typeText' type='text' name='bucketList5' value={admin.bucketList5}/>
                     <br></br>
-
                     <MDBInput onChange={this.handleChange} label='Bucket Photo 5' id='typeURL' type='url' name='bucketPhoto5' value={admin.bucketPhoto5}/>
                     <br></br>
-                    
                     <div className="d-flex justify-content-evenly" style={{padding: "50px"}}>
                     <MDBBtn style={{ backgroundColor: 'orange' }} onChange={this.handleChange}><MDBIcon className='me-2' fas icon='edit'/>Edit</MDBBtn>
                     <MDBBtn style={{ backgroundColor: 'orangered' }} onClick={this.handleDelete}><MDBIcon className='me-2' fas icon="trash-alt" />Delete</MDBBtn>

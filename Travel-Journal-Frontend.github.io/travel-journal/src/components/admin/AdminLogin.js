@@ -40,14 +40,13 @@ class AdminLogin extends Component {
             this.props.history.push(`/adminedit/${resp.data.id}`)  
         })
         .catch(err => {
-            console.log(err)
             alert("Wrong Username or Password. Try Again")
         })
     }
 
 
     render() {
-        console.log(this.props)
+        
         return (
             
             <div>
