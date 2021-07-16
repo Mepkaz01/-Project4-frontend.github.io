@@ -10,7 +10,7 @@ function Country(props) {
           <div style={{fontSize: "200%"}}>SubRegion: {country.subregion}</div>
           <div style={{fontSize: "200%"}}>Region: {country.region}</div>
         </div>        
-        <div className='d-flex flex-row-reverse justify-content-evenly'>
+        <div style ={{marginTop: "50px"}}className='d-flex flex-row-reverse justify-content-evenly'>
           <div style={{fontSize: "200%", fontFamily: "Garamond, serif"}}>
             <p><strong>Alternate Spellings:</strong> {country.altSpellings.join(', ')}</p>
             <p><strong>Capital:</strong> {country.capital}</p>

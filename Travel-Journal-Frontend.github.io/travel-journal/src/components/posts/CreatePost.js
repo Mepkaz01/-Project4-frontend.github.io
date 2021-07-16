@@ -1,5 +1,10 @@
-import React, {Component} from "react"
-import axios from "axios"
+import React, {Component} from "react";
+import axios from "axios";
+import {
+    MDBInput,
+    MDBBtn,
+      
+  } from 'mdb-react-ui-kit';
 
 class CreatePost extends Component {
     constructor(props) {
@@ -54,24 +59,45 @@ class CreatePost extends Component {
 
         render(props) {
             return (
-         <div>
+         <div className='d-flex flex-column justify-content-center' style={{marginTop: '50px', textAlign: 'center', alignContent: 'center' }}>
             { this.state.toggle ? 
             <div>
-                <h2>Create Post</h2>
-                <form onSubmit={this.handleSubmit}>
+                <h2 style={{color: "rgb(65, 59, 59)", fontFamily: "Garamond, serif", fontSize: "300%", fontWeight: "bold"}}>Create Post</h2>
+                <form onSubmit={this.handleSubmit} style ={{margin: '50px 0px 0px 790px', width: "50rem"}}>
 
-                    <div><label>Country: </label><input onChange={this.handleChange} type="text" name="country" placeholder="country"/></div>
-                    <div><label>City: </label><input onChange={this.handleChange} type="text" name="city" placeholder="city" /></div>
-                    <div><label>Things To Do: </label><input onChange={this.handleChange} type="text" name="thingsToDo" placeholder="do" /></div>
-                    <div><label>Where To Eat: </label><input onChange={this.handleChange} type="text" name="whereToEat" placeholder="eat"/> </div>                
-                    <div><label>Where To Stay: </label><input onChange={this.handleChange} type="text" name="whereToStay" placeholder="stay"/></div>               
-                    <div><label>Traveler's Tips: </label><input onChange={this.handleChange} type="text" name="tips" placeholder="tips" /></div>    
-                    <div><label>Budget: </label><input onChange={this.handleChange} type="text" name="cost" placeholder="cost" /></div>
-                    <div><label>Photo: </label><input onChange={this.handleChange} type="img" name="image" placeholder="image" /></div>
+                    <MDBInput onChange={this.handleChange} label='Country' id='typeText' type='text' name='country' />
+                    <br></br>
+
+                    <MDBInput onChange={this.handleChange} label='City' id='typeText' type='text' name='city' />
+                    <br></br>
+
+                    <MDBInput onChange={this.handleChange} label='Things To Do' id='textAreaExample' textarea rows={3} type='text' name='thingsToDo' />
+                    <br></br>
+
+                    <MDBInput onChange={this.handleChange} label='Where To Eat' id='textAreaExample' textarea rows={3} type='text' name='whereToEat' />
+                    <br></br>
+
+		            <MDBInput onChange={this.handleChange} label='Where To Stay' id='textAreaExample' textarea rows={3} type='text' name='whereToStay' />
+                    <br></br>
+
+		            <MDBInput onChange={this.handleChange} label='Travelers Tips' id='textAreaExample' textarea rows={4} type='text' name='tips' />
+                    <br></br>
+
+		            <MDBInput onChange={this.handleChange} label='Budget' id='typeText' type='text' name='cost' />
+                    <br></br>
+                                            
+                    <MDBInput onChange={this.handleChange} label='Photo #1' id='typeURL' type='url' name='image1' />
+                    <br></br>
+
+                    <MDBInput onChange={this.handleChange} label='Photo #2' id='typeURL' type='url' name='image2' />
+                    <br></br> 
+
+		            <MDBInput onChange={this.handleChange} label='Photo #3' id='typeURL' type='url' name='image3' />
+                    <br></br> 
                     <input onChange={this.handleChange} type='hidden' name="adminId" value={this.props.admin.id} placeholder={this.props.admin.id}/>
-                        
-                    <input type="submit" value="Submit to Create Post"/>           
-             
+                    <div style={{padding: "50px"}}>   
+                    <MDBBtn className='mx-2' color='info'>Submit Post</MDBBtn>            
+                    </div> 
                 </form>
             </div>
             : null}

@@ -84,7 +84,7 @@ class Signup extends Component {
                 <div className='d-flex flex-column justify-content-center' style={{margin: '150px 1000px', textAlign: 'center', alignContent: 'center' }}>
                     <h2 style={{color: "rgb(65, 59, 59)", fontFamily: "Garamond, serif", fontSize: "300%", fontWeight: "bold"}}>SIGN UP</h2>
                     <br></br>
-                    <form style={{width: "23rem"}} onSubmit={this.handleSubmit}>
+                    <form style={{width: "30rem", margin: '30px -40px'}} onSubmit={this.handleSubmit}>
                         <MDBInput onChange={this.handleChange} label='Name' id='typeName' type='text' name='name' />
                         <br></br> 
                         <MDBInput onChange={this.handleChange} label='Email' id='typeEmail' type='email' name='email' />

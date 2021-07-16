@@ -53,6 +53,48 @@ filterPeru = () => {
         
         }
 
+filterItaly = () => {
+    this.setState(
+        {post: this.state.posts.filter( country => 
+        country.country === "Italy")})
+                
+        }  
+        
+filterSpain = () => {
+    this.setState(
+        {post: this.state.posts.filter( country => 
+            country.country === "Spain")})
+                
+        }
+
+filterUSA = () => {
+    this.setState(
+        {post: this.state.posts.filter( country => 
+            country.country === "USA")})
+                        
+        }
+
+filterMexico = () => {
+    this.setState(
+        {post: this.state.posts.filter( country => 
+            country.country === "Mexico")})
+                                
+        }
+
+filterPortugal = () => {
+    this.setState(
+        {post: this.state.posts.filter( country => 
+            country.country === "Portugal")})
+                                        
+        }
+
+filterDominicanRepublic = () => {
+    this.setState(
+        {post: this.state.posts.filter( country => 
+            country.country === "Dominican Republic")})
+                                                
+        }
+
 filterTest = () => {
     this.setState(
         {post: this.state.posts.filter( country => 
@@ -100,22 +142,22 @@ render = (props)=>{
                 </div>    
                 <div className='d-flex flex-row justify-content-center'>
                     
-                        <MDBBtn outline onClick={this.filterPeru}>PERU</MDBBtn>
-                        {/* <MDBBtn onClick={this.filterUSA} outline className='mx-2' color='secondary'>
-                            USA
+                        <MDBBtn outline onClick={this.filterPeru} style={{fontSize: "125%"}}><i class="peru flag"></i>PERU</MDBBtn>
+                        <MDBBtn onClick={this.filterUSA} outline className='mx-2' color='secondary' style={{fontSize: "125%"}}>
+                            <i class="united states flag"></i>USA
                         </MDBBtn>
-                        <MDBBtn onClick={this.filterItaly} outline color='success'>ITALY</MDBBtn>
-                        <MDBBtn outline className='mx-2' color='danger'>
-                            SPAIN
+                        <MDBBtn onClick={this.filterItaly} outline color='success' style={{fontSize: "125%"}}><i class="italy flag"></i>ITALY</MDBBtn>
+                        <MDBBtn onClick={this.filterSpain} outline className='mx-2' color='danger' style={{fontSize: "125%"}}>
+                            <i class="spain flag"></i>SPAIN
                         </MDBBtn>
-                        <MDBBtn onClick={this.filterMexico} outline color='warning'>PORTUGAL</MDBBtn>
-                        <MDBBtn outline className='mx-2' color='info'>
-                            MEXICO
+                        <MDBBtn onClick={this.filterPortugal} outline color='warning' style={{fontSize: "125%"}}><i class="portugal flag"></i>PORTUGAL</MDBBtn>
+                        <MDBBtn onClick={this.filterMexico} outline className='mx-2' color='info' style={{fontSize: "125%"}}>
+                            <i class="mexico flag"></i>MEXICO
                         </MDBBtn>
-                        <MDBBtn onClick={this.filterDominicanRepublic} className='text-dark' color='light'>
-                            DOMINICAN REPUBLIC
-                        </MDBBtn> */}
-                        <MDBBtn onClick={this.filterTest} className='mx-2' color='dark'>
+                        <MDBBtn onClick={this.filterDominicanRepublic} className='text-dark' color='light' style={{fontSize: "125%"}}>
+                            <i class="dominican republic flag"></i>DOMINICAN REPUBLIC
+                        </MDBBtn>
+                        <MDBBtn onClick={this.filterTest} className='mx-2' color='dark' style={{fontSize: "125%"}}>
                             TEST
                         </MDBBtn>
                     
@@ -138,14 +180,16 @@ render = (props)=>{
                 </MDBCol>
 
                 <MDBCol size='4' className='col-example'>
-                    {/* <img src={post.image} alt="pic" width="500" height="auto"/> */}
                     <MDBCarousel showIndicators showControls>
                         <MDBCarouselInner>
                             <MDBCarouselItem itemId={0}>
-                            <MDBCarouselElement src={post.image} alt='...' />
+                            <MDBCarouselElement src={post.image1} alt='pic' />
                             </MDBCarouselItem>
                             <MDBCarouselItem itemId={1}>
-                            <MDBCarouselElement src='https://mdbcdn.b-cdn.net/img/new/slides/042.jpg' alt='...' />
+                            <MDBCarouselElement src={post.image2} alt='pic' />
+                            </MDBCarouselItem>
+                            <MDBCarouselItem itemId={2}>
+                            <MDBCarouselElement src={post.image3} alt='pic' />
                             </MDBCarouselItem>
                         </MDBCarouselInner>
                     </MDBCarousel>
