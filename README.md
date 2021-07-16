@@ -1,6 +1,9 @@
 # Project4-frontend.github.io
 Travel Blog/Journal
 
+* [Project Backend URL](https://github.com/Mepkaz01/Project4-backend.github.io)
+* [Project Trello](https://trello.com/b/egfEOojZ/my-travel-journal-app-c4g2021)
+
 ## Wire Frame
 
 ![Wire Frame](https://user-images.githubusercontent.com/82845234/125888408-f918c266-e9f3-46d5-8734-254db2b010d7.png)
