@@ -3,7 +3,8 @@ Travel Blog/Journal
 
 ## Wire Frame
 
-![Wire Frame](https://user-images.githubusercontent.com/82845234/124988822-7c071380-e00c-11eb-83de-eb0a1a470af6.png)
+![Wire Frame](https://user-images.githubusercontent.com/82845234/125888408-f918c266-e9f3-46d5-8734-254db2b010d7.png)
+
 
 ## User Stories
 
@@ -21,4 +22,6 @@ Travel Blog/Journal
 ## Resources
 
 Map Box: https://medium.com/geekculture/building-an-interactive-map-with-mapbox-react-f335384f4863
+MDBootStrap: https://mdbootstrap.com/docs/b5/react/getting-started/installation/
+
 
